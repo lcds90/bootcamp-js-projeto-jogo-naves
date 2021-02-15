@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resgate</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="backgroundGame">
+            <div id="begin">
+                <h1 class="title">Resgate</h1>
+                <p>
+                    Você irá conduzir um helicóptero
+                <p class="buttons">
+                    <span class="key">Tecla W -></span> <span class="legend">Para cima</span> <br>
+                    <span class="key">Tecla S -></span> <span class="legend">Para baixo</span> <br>
+                    <span class="key">Tecla D -></span> <span class="legend">Para atirar</span> <br>
+                </p>
+                </p>
+                <p id="startGame">INICIAR</p>
+            </div>
+        </div>
+    </div>
+    <audio src="audio/shoot.mp3" preload="auto" id="soundShoot"></audio>
+    <audio src="audio/explosion.mp3" preload="auto" id="soundExplosion"></audio>
+    <audio src="audio/soundtrack.mp3" preload="auto" id="music"></audio>
+    <!-- <audio src="audio/start.mp3" preload="auto" id="start" muted="muted"></audio> -->
+    <audio src="audio/gameover.mp3" preload="auto" id="soundGameover"></audio>
+    <audio src="audio/lost.mp3" preload="auto" id="soundLost"></audio>
+    <audio src="audio/save.mp3" preload="auto" id="soundSave"></audio>
+
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-collision.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
