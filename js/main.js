@@ -14,7 +14,7 @@ $(function () {
     $(".key").delay(2500).fadeIn(500);
     $(".legend").delay(5000).fadeIn(500);
 
-    $("#backgroundGame").css("background-image", "url(img/backgroundGameSepia.jpg)");
+    $("#backgroundGame").css("background-image", "url(img/backgroundGameStart.png)");
 
     $("#startGame")
     .delay(7500)
@@ -30,7 +30,7 @@ function restartGame() {
 }
 
 function start() {
-    $("#backgroundGame").css("background-image", "url(img/backgroundGame.jpg)");
+    $("#backgroundGame").css("background-image", "url(img/backgroundGame.png)");
 
   // =====================================================
   // principais variaveis do jogo
@@ -162,8 +162,8 @@ function start() {
 
       shootPos = parseInt($("#player").css("bottom"));
       positionX = parseInt($("#player").css("left"));
-      shootX = positionX + 190;
-      shootOn = shootPos - 5;
+      shootX = positionX + 100;
+      shootOn = shootPos - -5;
       $("#backgroundGame").append("<div id='shoot'></div");
       $("#shoot").css("bottom", shootOn);
       $("#shoot").css("left", shootX);
@@ -272,11 +272,15 @@ function start() {
   function explosionEnemy1(enemy1X, enemy1Y) {
       soundExplosion.play()
     $("#backgroundGame").append("<div id='explosion1'></div");
-    $("#explosion1").css("background-image", "url(img/explode.png)");
+    $("#explosion1").css({
+        "background-image": "url(img/explode_gif_airplane.gif)",
+        "background-position": "center",
+        "background-repeat": "no-repeat"
+    });
     var div = $("#explosion1");
-    div.css("top", enemy1Y);
-    div.css("left", enemy1X);
-    div.animate({ width: 200, opacity: 0 }, "slow");
+    div.css("top", enemy1Y - 100);
+    div.css("left", enemy1X - 50);
+    div.animate({ opacity: 0 }, "slow");
 
     var timeExplosion = window.setInterval(removeExplosion, 1000);
 
@@ -290,11 +294,15 @@ function start() {
   function explosionEnemy2(enemy2X, enemy2Y) {
       soundExplosion.play()
     $("#backgroundGame").append("<div id='explosion2'></div");
-    $("#explosion2").css("background-image", "url(img/explode.png)");
+    $("#explosion2").css({
+        "background-image": "url(img/explode_gif.gif)",
+        "background-position": "center",
+        "background-repeat": "no-repeat"
+    });
     var div2 = $("#explosion2");
-    div2.css("top", enemy2Y);
-    div2.css("left", enemy2X);
-    div2.animate({ width: 200, opacity: 0 }, "slow");
+    div2.css("top", enemy2Y - 150);
+    div2.css("left", enemy2X - 45);
+    div2.animate({  opacity: 0 }, "slow");
 
     var timeExplosion2 = window.setInterval(removeExplosion2, 1000);
 
@@ -352,7 +360,7 @@ function start() {
 	gameEnd=true;
 	music.pause();
 	soundGameover.play();
-    $("#backgroundGame").css("background-image", "url(img/backgroundGameBW.jpg)");
+    $("#backgroundGame").css("background-image", "url(img/backgroundGameEnd.png)");
 	
 	window.clearInterval(game.timer);
 	game.timer=null;
@@ -396,6 +404,7 @@ function start() {
   function moveBackground() {
     left = parseInt($("#backgroundGame").css("background-position"));
     $("#backgroundGame").css("background-position", left - 1);
+
   }
 
   function loop() {

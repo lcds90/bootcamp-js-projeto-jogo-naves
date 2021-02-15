@@ -18,6 +18,8 @@ body {
 }
 
 #container {
+    outline:5px double lightgrey;
+    box-shadow: 0px 0px 75px lightgrey;
   width: 1200px;
   height: auto;
   position: relative;
@@ -25,6 +27,10 @@ body {
   margin-right: auto;
   overflow: hidden;
 
+}
+
+#container div {
+    /* outline: .5px solid red; */
 }
 
 #backgroundGame {
@@ -202,30 +208,38 @@ ATORES
 */
 
 #player {
-  width: 256px;
-  height: 66px;
+  width: 100px;
+  height: 75px;
   position: absolute;
   left: 8px;
   top: 179px;
-  background-image: url(../img/apache.png);
+  background-size:200% 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/fly.png);
 }
 
 #enemy1 {
-  width: 256px;
-  height: 66px;
+  width: 95px;
+  height: 50px;
   position: absolute;
   left: 1200px;
   top: 253px;
-  background-image: url(../img/enemy1.png);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-size:200% 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/enemy.png);
 }
 
 #enemy2 {
-  width: 165px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   position: absolute;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
   left: 1200px;
-  top: 447px;
-  background-image: url(../img/enemy2.png);
+  top: 415px;
+  background-image: url(../img/enemyCar.png);
 }
 
 #friend {
@@ -233,8 +247,8 @@ ATORES
   height: 51px;
   position: absolute;
   left: -100px;
-  top: 464px;
-  background-image: url(../img/friend.png);
+  top: 470px;
+  background-image: url(../img/friendPink.png);
 }
 
 #shoot {
@@ -245,17 +259,16 @@ ATORES
 }
 
 #explosion1 {
-	width:15px;
-	height:87px;
+	width:200px;
+	height:250px;
 	position:absolute;
 
 }
 
 #explosion2 {
-	width:15px;
-	height:87px;
+	width:200px;
+	height:300px;
 	position:absolute;
-	
 }
 
 #explosion3 {
@@ -276,7 +289,7 @@ ANIMAÇÕES
 */
 
 .player-animation {
-  background-image: url(../img/helicoptero.png);
+  background-image: url(../img/fly.png);
   animation: play 0.25s steps(2) infinite;
 
   -webkit-animation: play 0.25s steps(2) infinite;
@@ -287,12 +300,12 @@ ANIMAÇÕES
 
 
 .enemy-animation {
-    background-image:url(../img/enemy1.png);
-    animation: play .25s steps(2) infinite;
+    background-image:url(../img/enemy.png);
+     animation: play .25s steps(2) infinite;
     -webkit-animation: play .25s steps(2) infinite;
     -moz-animation: play .25s steps(2) infinite;
     -ms-animation: play .25s steps(2) infinite;
-    -o-animation: play .25s steps(2) infinite; 
+    -o-animation: play .25s steps(2) infinite;  
 }
 
 
@@ -322,7 +335,7 @@ ANIMAÇÕES
     background-position: 0px;
   }
   to {
-    background-position: -512px;
+    background-position: -200px;
   }
 }
 
@@ -331,7 +344,7 @@ ANIMAÇÕES
     background-position: 0px;
   }
   to {
-    background-position: -512px;
+    background-position: -200px;
   }
 }
 
@@ -340,7 +353,7 @@ ANIMAÇÕES
     background-position: 0px;
   }
   to {
-    background-position: -512px;
+    background-position: -200px;
   }
 }
 
@@ -349,7 +362,7 @@ ANIMAÇÕES
     background-position: 0px;
   }
   to {
-    background-position: -512px;
+    background-position: -200px;
   }
 }
 
@@ -358,7 +371,7 @@ ANIMAÇÕES
     background-position: 0px;
   }
   to {
-    background-position: -512px;
+    background-position: -200px;
   }
 }
 
